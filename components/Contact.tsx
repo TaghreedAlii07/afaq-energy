@@ -21,7 +21,7 @@ export default function Contact() {
           <div className="mt-10 space-y-5">
             <div className="flex items-center gap-4">
               <Phone className="text-orange-400" />
-              <span>+966 597791713</span>
+              <span>597791713</span>
             </div>
 
             <div className="flex items-center gap-4">
