@@ -9,14 +9,13 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 z-50 w-full bg-white shadow-md">
         <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-12">
-          <div className="flex flex-col text-right">
-            <h1 className="text-3xl font-black text-[#1F4E8C]">
-              آفاق الطاقة
-            </h1>
-            <span className="mt-1 text-sm tracking-[6px] text-gray-500">
-              AFAQ ENERGY
-            </span>
-          </div>
+          <a href="#home" className="block">
+  <img
+    src="/images/logo.png"
+    alt="آفاق الطاقة - AFAQ ENERGY"
+    className="h-20 w-auto object-contain"
+  />
+</a>
 
           <div className="hidden items-center gap-10 text-lg font-bold text-[#1F4E8C] lg:flex">
             <a href="#home" className="hover:text-amber-500">الرئيسية</a>
