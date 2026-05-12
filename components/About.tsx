@@ -6,7 +6,7 @@ export default function About() {
           <div className="absolute -right-4 -top-4 h-full w-full rounded-3xl bg-orange-400/20" />
 
           <img
-            src="/images/Hero.jpg"
+            src="/images/about.png"
             alt="AFAQ ENERGY"
             className="relative h-[360px] w-full rounded-3xl object-cover shadow-2xl md:h-[500px]"
           />
