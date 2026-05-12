@@ -37,7 +37,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#services"
-              className="rounded-full bg-orange-500 px-8 py-4 text-center font-bold text-white shadow-lg transition hover:bg-orange-600"
+              className="rounded-full bg-amber-500 px-8 py-4 text-center font-bold text-white shadow-lg transition hover:bg-amber-600"
             >
               اكتشف خدماتنا
             </a>

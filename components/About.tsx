@@ -13,7 +13,7 @@ export default function About() {
         </div>
 
         <div className="order-1 text-right lg:order-2">
-          <p className="mb-4 text-sm font-black uppercase tracking-[4px] text-orange-500">
+          <p className="mb-4 text-sm font-black uppercase tracking-[4px] text-amber-500">
             من نحن
           </p>
 
@@ -31,21 +31,21 @@ export default function About() {
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl bg-white p-5 shadow-sm">
-              <h3 className="text-3xl font-black text-orange-500">+10</h3>
+              <h3 className="text-3xl font-black text-amber-500">+10</h3>
               <p className="mt-2 text-sm font-semibold text-gray-600">
                 سنوات خبرة
               </p>
             </div>
 
             <div className="rounded-2xl bg-white p-5 shadow-sm">
-              <h3 className="text-3xl font-black text-orange-500">+50</h3>
+              <h3 className="text-3xl font-black text-amber-500">+50</h3>
               <p className="mt-2 text-sm font-semibold text-gray-600">
                 مشروع منجز
               </p>
             </div>
 
             <div className="rounded-2xl bg-white p-5 shadow-sm">
-              <h3 className="text-3xl font-black text-orange-500">24/7</h3>
+              <h3 className="text-3xl font-black text-amber-500">24/7</h3>
               <p className="mt-2 text-sm font-semibold text-gray-600">
                 دعم فني
               </p>

@@ -41,31 +41,31 @@ export default function Contact() {
             <input
               type="text"
               placeholder="الاسم"
-              className="rounded-2xl border border-gray-200 bg-white px-5 py-4 outline-none focus:border-orange-500"
+              className="rounded-2xl border border-gray-200 bg-white px-5 py-4 outline-none focus:border-amber-500"
             />
 
             <input
               type="tel"
               placeholder="رقم الجوال"
-              className="rounded-2xl border border-gray-200 bg-white px-5 py-4 outline-none focus:border-orange-500"
+              className="rounded-2xl border border-gray-200 bg-white px-5 py-4 outline-none focus:border-amber-500"
             />
           </div>
 
           <input
             type="email"
             placeholder="البريد الإلكتروني"
-            className="mt-5 w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 outline-none focus:border-orange-500"
+            className="mt-5 w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 outline-none focus:border-amber-500"
           />
 
           <textarea
             placeholder="رسالتك"
             rows={6}
-            className="mt-5 w-full resize-none rounded-2xl border border-gray-200 bg-white px-5 py-4 outline-none focus:border-orange-500"
+            className="mt-5 w-full resize-none rounded-2xl border border-gray-200 bg-white px-5 py-4 outline-none focus:border-amber-500"
           />
 
           <button
             type="submit"
-            className="mt-6 rounded-full bg-orange-500 px-10 py-4 font-bold text-white transition hover:bg-orange-600"
+            className="mt-6 rounded-full bg-amber-500 px-10 py-4 font-bold text-white transition hover:bg-amber-600"
           >
             إرسال الرسالة
           </button>

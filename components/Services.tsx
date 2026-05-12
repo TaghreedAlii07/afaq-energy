@@ -40,7 +40,7 @@ export default function Services() {
       <div className="mx-auto max-w-7xl">
         
         <div className="mb-16 text-right">
-          <p className="mb-4 text-sm font-black uppercase tracking-[4px] text-orange-500">
+          <p className="mb-4 text-sm font-black uppercase tracking-[4px] text-amber-500">
             خدماتنا
           </p>
 
@@ -60,7 +60,7 @@ export default function Services() {
                 key={index}
                 className="group rounded-3xl border border-gray-100 bg-[#f8fafc] p-8 transition duration-300 hover:-translate-y-2 hover:bg-[#1F4E8C] hover:shadow-2xl"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-500 text-white">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500 text-white">
                   <Icon size={30} />
                 </div>
 

@@ -19,16 +19,16 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-10 text-lg font-bold text-[#1F4E8C] lg:flex">
-            <a href="#home" className="hover:text-orange-500">الرئيسية</a>
-            <a href="#about" className="hover:text-orange-500">من نحن</a>
-            <a href="#services" className="hover:text-orange-500">خدماتنا</a>
-            <a href="#projects" className="hover:text-orange-500">المشاريع</a>
-            <a href="#contact" className="hover:text-orange-500">تواصل</a>
+            <a href="#home" className="hover:text-amber-500">الرئيسية</a>
+            <a href="#about" className="hover:text-amber-500">من نحن</a>
+            <a href="#services" className="hover:text-amber-500">خدماتنا</a>
+            <a href="#projects" className="hover:text-amber-500">المشاريع</a>
+            <a href="#contact" className="hover:text-amber-500">تواصل</a>
           </div>
 
           <a
             href="#contact"
-            className="hidden rounded-full bg-orange-500 px-8 py-3 font-bold text-white transition hover:bg-orange-600 lg:block"
+            className="hidden rounded-full bg-amber-500 px-8 py-3 font-bold text-white transition hover:bg-amber-600 lg:block"
           >
             تواصل معنا
           </a>
@@ -55,7 +55,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-full bg-orange-500 py-3 text-center text-base font-bold text-white"
+                className="mt-2 rounded-full bg-amber-500 py-3 text-center text-base font-bold text-white"
               >
                 تواصل معنا
               </a>

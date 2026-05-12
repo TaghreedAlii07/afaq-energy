@@ -21,7 +21,7 @@ export default function Projects() {
     <section id="projects" className="bg-[#f8fafc] px-6 py-24 md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-14 text-center">
-          <p className="mb-4 text-sm font-black tracking-[4px] text-orange-500">
+          <p className="mb-4 text-sm font-black tracking-[4px] text-amber-500">
             المشاريع
           </p>
 
@@ -53,7 +53,7 @@ export default function Projects() {
                   {project.desc}
                 </p>
 
-                <button className="mt-6 rounded-full bg-orange-500 px-6 py-3 font-bold text-white transition hover:bg-orange-600">
+                <button className="mt-6 rounded-full bg-amber-500 px-6 py-3 font-bold text-white transition hover:bg-amber-600">
                   عرض التفاصيل
                 </button>
               </div>

@@ -69,28 +69,28 @@ export default function Footer() {
           <div className="flex gap-4">
             <a
               href="#"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-orange-500"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-amber-600"
             >
               <FaFacebookF />
             </a>
 
             <a
               href="#"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-orange-500"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-amber-600"
             >
               <FaInstagram />
             </a>
 
             <a
               href="#"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-orange-500"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-amber-600"
             >
               <FaLinkedinIn />
             </a>
 
             <a
               href="#"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-orange-500"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-amber-600"
             >
               <FaXTwitter />
             </a>
