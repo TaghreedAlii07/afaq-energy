@@ -1,33 +1,46 @@
 import {
-  Wrench,
+  Fuel,
+  Drill,
+  Zap,
   Factory,
-  ShieldCheck,
-  Cpu,
+  Building2,
+  Wheat,
+  Ship,
+  Cog,
 } from "lucide-react";
 
-const services = [
+const industries = [
   {
-    title: "توريد المعدات الصناعية",
-    desc: "توفير معدات وأجهزة عالية الجودة للمشاريع الصناعية والطاقة.",
+    title: "Oil & Gas",
+    icon: Fuel,
+  },
+  {
+    title: "Drilling & Exploration",
+    icon: Drill,
+  },
+  {
+    title: "Utility & Energy Generation",
+    icon: Zap,
+  },
+  {
+    title: "Mining & Refining",
     icon: Factory,
   },
-
   {
-    title: "الدعم الفني والهندسي",
-    desc: "حلول هندسية متكاملة بإشراف متخصصين وخبراء في القطاع.",
-    icon: Wrench,
+    title: "Construction & EPC",
+    icon: Building2,
   },
-
   {
-    title: "أنظمة التحكم والطاقة",
-    desc: "تصميم وتنفيذ حلول الطاقة وأنظمة التشغيل الحديثة.",
-    icon: Cpu,
+    title: "Agricultural, Food & Beverage",
+    icon: Wheat,
   },
-
   {
-    title: "الجودة والسلامة",
-    desc: "الالتزام بأعلى معايير الجودة والسلامة في جميع المشاريع.",
-    icon: ShieldCheck,
+    title: "Marine",
+    icon: Ship,
+  },
+  {
+    title: "Manufacturing & Process Industries",
+    icon: Cog,
   },
 ];
 
@@ -38,22 +51,19 @@ export default function Services() {
       className="bg-white px-6 py-24 md:px-12 lg:px-20"
     >
       <div className="mx-auto max-w-7xl">
-        
         <div className="mb-16 text-right">
           <p className="mb-4 text-sm font-black uppercase tracking-[4px] text-amber-500">
-            خدماتنا
+            الصناعات التي نخدمها
           </p>
 
-          <h2 className="text-3xl font-black text-[#1F4E8C] md:text-5xl">
-            حلول متكاملة
-            <br />
-            لقطاع الطاقة والصناعة
+          <h2 className="text-3xl font-black leading-tight text-[#1F4E8C] md:text-5xl">
+            Industries We Serve
           </h2>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+          {industries.map((industry, index) => {
+            const Icon = industry.icon;
 
             return (
               <div
@@ -64,13 +74,9 @@ export default function Services() {
                   <Icon size={30} />
                 </div>
 
-                <h3 className="mt-6 text-2xl font-black text-[#1F4E8C] transition group-hover:text-white">
-                  {service.title}
+                <h3 className="mt-6 text-xl font-black leading-8 text-[#1F4E8C] transition group-hover:text-white">
+                  {industry.title}
                 </h3>
-
-                <p className="mt-4 leading-8 text-gray-600 transition group-hover:text-gray-200">
-                  {service.desc}
-                </p>
               </div>
             );
           })}
