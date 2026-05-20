@@ -10,7 +10,12 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "AFAQ ENERGY",
   description: "AFAQ ENERGY COMPANY",
-};
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
+}
 
 export default function RootLayout({
   children,
