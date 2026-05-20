@@ -11,45 +11,50 @@ import {
 
 const industries = [
   {
-    title: "Oil & Gas",
+    ar: "النفط والغاز",
+    en: "Oil & Gas",
     icon: Fuel,
   },
   {
-    title: "Drilling & Exploration",
+    ar: "الحفر والاستكشاف",
+    en: "Drilling & Exploration",
     icon: Drill,
   },
   {
-    title: "Utility & Energy Generation",
+    ar: "المرافق وتوليد الطاقة",
+    en: "Utility & Energy Generation",
     icon: Zap,
   },
   {
-    title: "Mining & Refining",
+    ar: "التعدين والتكرير",
+    en: "Mining & Refining",
     icon: Factory,
   },
   {
-    title: "Construction & EPC",
+    ar: "الإنشاءات ومشاريع EPC",
+    en: "Construction & EPC",
     icon: Building2,
   },
   {
-    title: "Agricultural, Food & Beverage",
+    ar: "الزراعة والأغذية والمشروبات",
+    en: "Agricultural, Food & Beverage",
     icon: Wheat,
   },
   {
-    title: "Marine",
+    ar: "القطاع البحري",
+    en: "Marine",
     icon: Ship,
   },
   {
-    title: "Manufacturing & Process Industries",
+    ar: "الصناعات التحويلية والتشغيلية",
+    en: "Manufacturing & Process Industries",
     icon: Cog,
   },
 ];
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="bg-white px-6 py-24 md:px-12 lg:px-20"
-    >
+    <section id="services" className="bg-white px-6 py-24 md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-right">
           <p className="mb-4 text-sm font-black uppercase tracking-[4px] text-amber-500">
@@ -57,7 +62,11 @@ export default function Services() {
           </p>
 
           <h2 className="text-3xl font-black leading-tight text-[#1F4E8C] md:text-5xl">
-            Industries We Serve
+            قطاعات صناعية متنوعة
+            <br />
+            <span className="text-2xl text-gray-500 md:text-3xl">
+              Industries We Serve
+            </span>
           </h2>
         </div>
 
@@ -68,15 +77,19 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="group rounded-3xl border border-gray-100 bg-[#f8fafc] p-8 transition duration-300 hover:-translate-y-2 hover:bg-[#1F4E8C] hover:shadow-2xl"
+                className="group rounded-3xl border border-gray-100 bg-[#f8fafc] p-8 text-right transition duration-300 hover:-translate-y-2 hover:bg-[#1F4E8C] hover:shadow-2xl"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500 text-white">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500 text-white">
                   <Icon size={30} />
                 </div>
 
-                <h3 className="mt-6 text-xl font-black leading-8 text-[#1F4E8C] transition group-hover:text-white">
-                  {industry.title}
+                <h3 className="text-xl font-black leading-8 text-[#1F4E8C] transition group-hover:text-white">
+                  {industry.ar}
                 </h3>
+
+                <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-gray-500 transition group-hover:text-gray-200">
+                  {industry.en}
+                </p>
               </div>
             );
           })}
