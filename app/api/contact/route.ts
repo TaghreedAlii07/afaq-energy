@@ -17,13 +17,11 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "AFAQ ENERGY <onboarding@resend.dev>",
-      to: [
-        "info@afaqenergy.com",
-        "sales@afaqenergy.com"
-      ],
-      subject: `رسالة جديدة من موقع AFAQ ENERGY - ${name}`,
-      html: `
+  from: "AFAQ ENERGY <noreply@afaqenergy.com>",
+  replyTo: email,
+  to: ["info@afaqenergy.com", "sales@afaqenergy.com"],
+  subject: `رسالة جديدة من موقع AFAQ ENERGY - ${name}`,
+  html:  `
         <div dir="rtl" style="font-family: Arial; line-height: 1.8;">
           <h2>رسالة جديدة من الموقع</h2>
           <p><strong>الاسم:</strong> ${name}</p>
