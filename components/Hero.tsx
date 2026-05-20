@@ -19,19 +19,21 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl text-right"
         >
-          <p className="mb-5 text-sm font-bold uppercase tracking-[6px] text-orange-400">
-            AFAQ ENERGY
+          <p className="mb-5 text-sm font-bold uppercase tracking-[6px] text-amber-500">
+            MRO SUPPLY CHAIN SOLUTIONS
           </p>
 
           <h1 className="text-4xl font-black leading-[1.25] md:text-6xl lg:text-7xl">
-            نحو آفاق جديدة
+            حلول سلاسل الإمداد
             <br />
-            <span className="text-orange-400">من الطاقة</span>
+            <span className="text-amber-500">
+              للصيانة والإصلاح والتشغيل
+            </span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-9 text-gray-200 md:text-xl">
-            نقدم حلولًا متكاملة لتوريد الأجهزة والمواد الصناعية مع دعم هندسي
-            متخصص بأعلى معايير الجودة والكفاءة.
+            نقدم حلول MRO متكاملة لإدارة سلاسل الإمداد وتوريد المعدات والمواد
+            الصناعية لضمان استمرارية التشغيل بأعلى مستويات الجودة والكفاءة.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
