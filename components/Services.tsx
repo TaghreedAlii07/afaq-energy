@@ -9,50 +9,30 @@ import {
   Cog,
 } from "lucide-react";
 
-const industries = [
-  {
-    ar: "النفط والغاز",
-    en: "Oil & Gas",
-    icon: Fuel,
-  },
-  {
-    ar: "الحفر والاستكشاف",
-    en: "Drilling & Exploration",
-    icon: Drill,
-  },
-  {
-    ar: "المرافق وتوليد الطاقة",
-    en: "Utility & Energy Generation",
-    icon: Zap,
-  },
-  {
-    ar: "التعدين والتكرير",
-    en: "Mining & Refining",
-    icon: Factory,
-  },
-  {
-    ar: "الإنشاءات ومشاريع EPC",
-    en: "Construction & EPC",
-    icon: Building2,
-  },
-  {
-    ar: "الزراعة والأغذية والمشروبات",
-    en: "Agricultural, Food & Beverage",
-    icon: Wheat,
-  },
-  {
-    ar: "القطاع البحري",
-    en: "Marine",
-    icon: Ship,
-  },
-  {
-    ar: "الصناعات التحويلية والتشغيلية",
-    en: "Manufacturing & Process Industries",
-    icon: Cog,
-  },
-];
+import { client } from "@/sanity/lib/client";
+import { industriesQuery } from "@/sanity/lib/queries";
 
-export default function Services() {
+type Industry = {
+  arabicTitle?: string;
+  englishTitle?: string;
+  icon?: string;
+  displayOrder?: number;
+};
+
+const iconMap = {
+  Fuel,
+  Drill,
+  Zap,
+  Factory,
+  Building2,
+  Wheat,
+  Ship,
+  Cog,
+};
+
+export default async function Services() {
+  const industries = await client.fetch<Industry[]>(industriesQuery);
+
   return (
     <section id="services" className="bg-white px-6 py-24 md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
@@ -71,8 +51,9 @@ export default function Services() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-          {industries.map((industry, index) => {
-            const Icon = industry.icon;
+          {industries?.map((industry, index) => {
+            const Icon =
+              iconMap[industry.icon as keyof typeof iconMap] || Cog;
 
             return (
               <div
@@ -84,11 +65,11 @@ export default function Services() {
                 </div>
 
                 <h3 className="text-xl font-black leading-8 text-[#1F4E8C] transition group-hover:text-white">
-                  {industry.ar}
+                  {industry.arabicTitle}
                 </h3>
 
                 <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-gray-500 transition group-hover:text-gray-200">
-                  {industry.en}
+                  {industry.englishTitle}
                 </p>
               </div>
             );

@@ -13,7 +13,11 @@ type ContactData = {
 };
 
 export default async function Contact() {
-  const contact = await client.fetch<ContactData>(contactQuery);
+  const contact = await client.fetch<ContactData>(
+  contactQuery,
+  {},
+  { cache: "no-store" }
+);
 
   return (
     <section id="contact" className="bg-white px-6 py-24 md:px-12 lg:px-20">

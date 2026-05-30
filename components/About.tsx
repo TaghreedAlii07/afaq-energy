@@ -11,7 +11,11 @@ type AboutData = {
 };
 
 export default async function About() {
-  const about = await client.fetch<AboutData>(aboutQuery);
+  const about = await client.fetch<AboutData>(
+  aboutQuery,
+  {},
+  { cache: "no-store" }
+);
 
   const imageUrl = about?.image ? urlFor(about.image).url() : "/images/about.png";
 

@@ -28,8 +28,6 @@ const hero = defineType({
       title: "Description",
       type: "text",
       rows: 4,
-      initialValue:
-        "نقدم حلول MRO متكاملة لإدارة سلاسل الإمداد وتوريد المعدات والمواد الصناعية لضمان استمرارية التشغيل بأعلى مستويات الجودة والكفاءة.",
     }),
     defineField({
       name: "backgroundImage",
@@ -45,11 +43,36 @@ const about = defineType({
   title: "About Section",
   type: "document",
   fields: [
-    defineField({ name: "label", title: "Label", type: "string", initialValue: "من نحن" }),
-    defineField({ name: "titleLine1", title: "Title Line 1", type: "string", initialValue: "خبرة صناعية" }),
-    defineField({ name: "titleLine2", title: "Title Line 2", type: "string", initialValue: "بمعايير عالمية" }),
-    defineField({ name: "description", title: "Description", type: "text", rows: 5 }),
-    defineField({ name: "image", title: "Image", type: "image", options: { hotspot: true } }),
+    defineField({
+      name: "label",
+      title: "Label",
+      type: "string",
+      initialValue: "من نحن",
+    }),
+    defineField({
+      name: "titleLine1",
+      title: "Title Line 1",
+      type: "string",
+      initialValue: "خبرة صناعية",
+    }),
+    defineField({
+      name: "titleLine2",
+      title: "Title Line 2",
+      type: "string",
+      initialValue: "بمعايير عالمية",
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 5,
+    }),
+    defineField({
+      name: "image",
+      title: "Image",
+      type: "image",
+      options: { hotspot: true },
+    }),
   ],
 });
 
@@ -58,15 +81,115 @@ const contact = defineType({
   title: "Contact Section",
   type: "document",
   fields: [
-    defineField({ name: "title", title: "Title", type: "string", initialValue: "جاهزون لخدمة مشروعك" }),
-    defineField({ name: "description", title: "Description", type: "text", rows: 4 }),
-    defineField({ name: "phone", title: "Phone", type: "string", initialValue: "+966 597791713" }),
-    defineField({ name: "emailPrimary", title: "Primary Email", type: "string", initialValue: "info@afaqenergy.com" }),
-    defineField({ name: "emailSales", title: "Sales Email", type: "string", initialValue: "sales@afaqenergy.com" }),
-    defineField({ name: "location", title: "Location", type: "string", initialValue: "Saudi Arabia" }),
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      initialValue: "جاهزون لخدمة مشروعك",
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 4,
+    }),
+    defineField({
+      name: "phone",
+      title: "Phone",
+      type: "string",
+      initialValue: "+966 59 779 1713",
+    }),
+    defineField({
+      name: "emailPrimary",
+      title: "Primary Email",
+      type: "string",
+      initialValue: "info@afaqenergy.com",
+    }),
+    defineField({
+      name: "emailSales",
+      title: "Sales Email",
+      type: "string",
+      initialValue: "sales@afaqenergy.com",
+    }),
+    defineField({
+      name: "location",
+      title: "Location",
+      type: "string",
+      initialValue: "Saudi Arabia",
+    }),
+  ],
+});
+
+const industry = defineType({
+  name: "industry",
+  title: "Industry",
+  type: "document",
+  fields: [
+    defineField({
+      name: "titleAr",
+      title: "Arabic Title",
+      type: "string",
+    }),
+    defineField({
+      name: "titleEn",
+      title: "English Title",
+      type: "string",
+    }),
+    defineField({
+      name: "icon",
+      title: "Icon",
+      type: "string",
+      options: {
+        list: [
+          { title: "Fuel", value: "Fuel" },
+          { title: "Drill", value: "Drill" },
+          { title: "Zap", value: "Zap" },
+          { title: "Factory", value: "Factory" },
+          { title: "Building", value: "Building2" },
+          { title: "Wheat", value: "Wheat" },
+          { title: "Ship", value: "Ship" },
+          { title: "Cog", value: "Cog" },
+        ],
+      },
+    }),
+    defineField({
+      name: "order",
+      title: "Display Order",
+      type: "number",
+    }),
+  ],
+});
+
+const project = defineType({
+  name: "project",
+  title: "Project",
+  type: "document",
+  fields: [
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 4,
+    }),
+    defineField({
+      name: "image",
+      title: "Image",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "order",
+      title: "Display Order",
+      type: "number",
+    }),
   ],
 });
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [hero, about, contact],
+  types: [hero, about, contact, industry, project],
 };

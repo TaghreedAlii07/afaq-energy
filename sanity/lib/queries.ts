@@ -30,3 +30,20 @@ export const contactQuery = groq`
     location
   }
 `;
+
+export const industriesQuery = groq`
+  *[_type == "industry"] | order(displayOrder asc){
+    arabicTitle,
+    englishTitle,
+    icon,
+    displayOrder
+  }
+`;
+
+export const projectsQuery = groq`
+  *[_type == "project"] | order(displayOrder asc){
+    title,
+    description,
+    image
+  }
+`;
