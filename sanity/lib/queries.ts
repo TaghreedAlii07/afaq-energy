@@ -40,7 +40,7 @@ export const industriesQuery = groq`
 `;
 
 export const projectsQuery = groq`
-  *[_type == "project"] | order(displayOrder asc){
+  *[_type == "project"] | order(order asc){
     title,
     description,
     image
