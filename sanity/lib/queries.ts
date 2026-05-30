@@ -32,11 +32,10 @@ export const contactQuery = groq`
 `;
 
 export const industriesQuery = groq`
-  *[_type == "industry"] | order(displayOrder asc){
-    arabicTitle,
-    englishTitle,
-    icon,
-    displayOrder
+  *[_type == "industry"] | order(_createdAt asc){
+    "arabicTitle": titleAr,
+    "englishTitle": titleEn,
+    icon
   }
 `;
 
