@@ -11,7 +11,13 @@ type HeroData = {
 };
 
 export default async function Hero() {
-  const hero = await client.fetch<HeroData>(heroQuery);
+  const hero = await client.fetch<HeroData>(
+    heroQuery,
+    {},
+    {
+      cache: "no-store",
+    }
+  );
 
   const backgroundUrl = hero?.backgroundImage
     ? urlFor(hero.backgroundImage).url()
