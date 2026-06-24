@@ -28,31 +28,26 @@ export default function Navbar({ lang = "ar" }: { lang?: Lang }) {
     <>
       <header className="fixed top-0 z-50 w-full bg-white shadow-md">
         <nav
-  className={`mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-12 ${
-    isEnglish ? "flex-row" : "flex-row-reverse"
-  }`}
->
-          <a href={isEnglish ? "/en#home" : "/#home"} className="block">
+          dir={isEnglish ? "ltr" : "rtl"}
+          className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-6 px-6 lg:px-12"
+        >
+          <a href={isEnglish ? "/en#home" : "/#home"} className="shrink-0">
             <img
               src="/images/logo.png"
               alt="AFAQ ENERGY"
-              className="h-20 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </a>
 
-          <div
-  className={`hidden items-center gap-8 text-lg font-bold text-[#1F4E8C] lg:flex ${
-    isEnglish ? "flex-row" : "flex-row-reverse"
-  }`}
->
+          <div className="hidden flex-1 items-center justify-center gap-8 text-lg font-bold text-[#1F4E8C] lg:flex">
             {links.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-amber-500">
+              <a key={link.href} href={link.href} className="whitespace-nowrap hover:text-amber-500">
                 {link.label}
               </a>
             ))}
           </div>
 
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden shrink-0 items-center gap-4 lg:flex">
             <a
               href={isEnglish ? "/#home" : "/en#home"}
               className="whitespace-nowrap rounded-full border border-[#1F4E8C]/30 px-5 py-3 font-bold text-[#1F4E8C] transition hover:border-amber-500 hover:text-amber-500"
@@ -80,12 +75,11 @@ export default function Navbar({ lang = "ar" }: { lang?: Lang }) {
         </nav>
 
         {open && (
-          <div className="absolute left-4 top-28 w-[280px] rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl lg:hidden">
-            <div
-              className={`flex flex-col gap-5 text-xl font-bold text-[#1F4E8C] ${
-                isEnglish ? "text-left" : "text-right"
-              }`}
-            >
+          <div
+            dir={isEnglish ? "ltr" : "rtl"}
+            className="absolute left-4 top-28 w-[280px] rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl lg:hidden"
+          >
+            <div className="flex flex-col gap-5 text-xl font-bold text-[#1F4E8C]">
               {links.map((link) => (
                 <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
                   {link.label}

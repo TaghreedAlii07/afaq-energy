@@ -56,9 +56,11 @@ export const industriesQuery = groq`
 `;
 
 export const projectsQuery = groq`
-  *[_type == "project"] | order(order asc){
+  *[_type == "project"] | order(_createdAt asc){
     title,
+    titleEn,
     description,
+    descriptionEn,
     image
   }
 `;

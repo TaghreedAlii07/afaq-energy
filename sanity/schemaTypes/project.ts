@@ -5,13 +5,44 @@ export const project = defineType({
   title: "Project",
   type: "document",
   fields: [
-    defineField({ name: "title", title: "Title", type: "string" }),
-    defineField({ name: "description", title: "Description", type: "text" }),
+    defineField({
+      name: "titleAr",
+      title: "Arabic Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "titleEn",
+      title: "English Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "descriptionAr",
+      title: "Arabic Description",
+      type: "text",
+    }),
+
+    defineField({
+      name: "descriptionEn",
+      title: "English Description",
+      type: "text",
+    }),
+
     defineField({
       name: "image",
       title: "Image",
       type: "image",
-      options: { hotspot: true },
+      options: {
+        hotspot: true,
+      },
+    }),
+
+    defineField({
+      name: "displayOrder",
+      title: "Display Order",
+      type: "number",
+      initialValue: 1,
     }),
   ],
 });

@@ -4,27 +4,37 @@ import { urlFor } from "@/sanity/lib/image";
 
 type Project = {
   title?: string;
+  titleEn?: string;
   description?: string;
+  descriptionEn?: string;
   image?: unknown;
 };
 
-export default async function Projects() {
+type Lang = "ar" | "en";
+
+export default async function Projects({ lang = "ar" }: { lang?: Lang }) {
   const projects = await client.fetch<Project[]>(
     projectsQuery,
     {},
     { cache: "no-store" }
   );
 
+  const isEnglish = lang === "en";
+
   return (
-    <section id="projects" className="bg-[#f8fafc] px-6 py-24 md:px-12 lg:px-20">
+    <section
+      id="projects"
+      dir={isEnglish ? "ltr" : "rtl"}
+      className="bg-[#f8fafc] px-6 py-24 md:px-12 lg:px-20"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mb-14 text-center">
           <p className="mb-4 text-sm font-black tracking-[4px] text-amber-500">
-            المشاريع
+            {isEnglish ? "PROJECTS" : "المشاريع"}
           </p>
 
           <h2 className="text-3xl font-black text-[#1F4E8C] md:text-5xl">
-            نماذج من أعمالنا
+            {isEnglish ? "Selected Projects" : "نماذج من أعمالنا"}
           </h2>
         </div>
 
@@ -34,6 +44,14 @@ export default async function Projects() {
               ? urlFor(project.image).url()
               : "/images/Hero.jpg";
 
+            const title = isEnglish
+              ? project.titleEn || project.title
+              : project.title;
+
+            const description = isEnglish
+              ? project.descriptionEn || project.description
+              : project.description;
+
             return (
               <div
                 key={index}
@@ -42,22 +60,22 @@ export default async function Projects() {
                 <div className="h-72 overflow-hidden">
                   <img
                     src={imageUrl}
-                    alt={project.title || "AFAQ ENERGY Project"}
+                    alt={title || "AFAQ ENERGY Project"}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                   />
                 </div>
 
-                <div className="p-7 text-right">
+                <div className={`p-7 ${isEnglish ? "text-left" : "text-right"}`}>
                   <h3 className="text-2xl font-black text-[#1F4E8C]">
-                    {project.title}
+                    {title}
                   </h3>
 
                   <p className="mt-4 leading-8 text-gray-600">
-                    {project.description}
+                    {description}
                   </p>
 
                   <button className="mt-6 rounded-full bg-amber-500 px-6 py-3 font-bold text-white transition hover:bg-amber-600">
-                    عرض التفاصيل
+                    {isEnglish ? "View Details" : "عرض التفاصيل"}
                   </button>
                 </div>
               </div>
