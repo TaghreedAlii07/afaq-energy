@@ -20,10 +20,18 @@ export const heroQuery = groq`
 
 export const aboutQuery = groq`
   *[_type == "about"][0]{
-    label,
-    titleLine1,
-    titleLine2,
-    description,
+    labelAr,
+    labelEn,
+
+    titleLine1Ar,
+    titleLine2Ar,
+
+    titleLine1En,
+    titleLine2En,
+
+    descriptionAr,
+    descriptionEn,
+
     image
   }
 `;
