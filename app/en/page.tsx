@@ -1,3 +1,4 @@
+import SplashScreen from "@/components/SplashScreen";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,6 +11,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 export default function EnglishPage() {
   return (
     <main dir="ltr">
+        <SplashScreen />
       <Navbar lang="en" />
       <Hero lang="en" />
       <About lang="en" />
