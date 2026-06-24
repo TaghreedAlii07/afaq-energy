@@ -2,10 +2,18 @@ import { groq } from "next-sanity";
 
 export const heroQuery = groq`
   *[_type == "hero"][0]{
-    eyebrow,
-    titleLine1,
-    titleLine2,
-    description,
+    "eyebrowAr": coalesce(eyebrowAr, eyebrow),
+    eyebrowEn,
+
+    "titleLine1Ar": coalesce(titleLine1Ar, titleLine1),
+    titleLine1En,
+
+    "titleLine2Ar": coalesce(titleLine2Ar, titleLine2),
+    titleLine2En,
+
+    "descriptionAr": coalesce(descriptionAr, description),
+    descriptionEn,
+
     backgroundImage
   }
 `;
