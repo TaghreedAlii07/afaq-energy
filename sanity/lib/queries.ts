@@ -38,12 +38,15 @@ export const aboutQuery = groq`
 
 export const contactQuery = groq`
   *[_type == "contact"][0]{
-    title,
-    description,
+    titleAr,
+    titleEn,
+    descriptionAr,
+    descriptionEn,
     phone,
     emailPrimary,
     emailSales,
-    location
+    locationAr,
+    locationEn
   }
 `;
 
@@ -56,11 +59,12 @@ export const industriesQuery = groq`
 `;
 
 export const projectsQuery = groq`
-  *[_type == "project"] | order(_createdAt asc){
-    title,
+  *[_type == "project"] | order(displayOrder asc){
+    titleAr,
     titleEn,
-    description,
+    descriptionAr,
     descriptionEn,
-    image
+    image,
+    displayOrder
   }
 `;

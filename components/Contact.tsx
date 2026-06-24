@@ -4,36 +4,60 @@ import { contactQuery } from "@/sanity/lib/queries";
 import ContactForm from "./ContactForm";
 
 type ContactData = {
-  title?: string;
-  description?: string;
+  titleAr?: string;
+  titleEn?: string;
+  descriptionAr?: string;
+  descriptionEn?: string;
   phone?: string;
   emailPrimary?: string;
   emailSales?: string;
-  location?: string;
+  locationAr?: string;
+  locationEn?: string;
 };
 
-export default async function Contact() {
+export default async function Contact({ lang = "ar" }: { lang?: "ar" | "en" }) {
   const contact = await client.fetch<ContactData>(
-  contactQuery,
-  {},
-  { cache: "no-store" }
-);
+    contactQuery,
+    {},
+    { cache: "no-store" }
+  );
+
+  const isEnglish = lang === "en";
+
+  const title = isEnglish ? contact?.titleEn : contact?.titleAr;
+  const description = isEnglish
+    ? contact?.descriptionEn
+    : contact?.descriptionAr;
+  const location = isEnglish ? contact?.locationEn : contact?.locationAr;
 
   return (
-    <section id="contact" className="bg-white px-6 py-24 md:px-12 lg:px-20">
+    <section
+      id="contact"
+      dir={isEnglish ? "ltr" : "rtl"}
+      className="bg-white px-6 py-24 md:px-12 lg:px-20"
+    >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-        <div className="rounded-3xl bg-[#1F4E8C] p-8 text-white md:p-12">
+        <div
+          className={`rounded-3xl bg-[#1F4E8C] p-8 text-white md:p-12 ${
+            isEnglish ? "text-left" : "text-right"
+          }`}
+        >
           <p className="mb-4 text-sm font-black tracking-[4px] text-amber-500">
-            تواصل معنا
+            {isEnglish ? "CONTACT US" : "تواصل معنا"}
           </p>
 
           <h2 className="text-3xl font-black leading-tight md:text-5xl">
-            {contact?.title || "جاهزون لخدمة مشروعك"}
+            {title ||
+              (isEnglish
+                ? "Ready To Support Your Project"
+                : "جاهزون لخدمة مشروعك")}
           </h2>
 
           <p className="mt-6 leading-8 text-blue-100">
-            {contact?.description ||
-              "يسعدنا استقبال استفساراتكم وتقديم الحلول المناسبة لاحتياجاتكم في قطاع الطاقة والصناعة."}
+            {description ||
+              (isEnglish
+                ? "We are happy to receive your inquiries and provide suitable solutions for your needs."
+                : "يسعدنا استقبال استفساراتكم وتقديم الحلول المناسبة لاحتياجاتكم.")}
           </p>
 
           <div className="mt-10 space-y-5">
@@ -54,12 +78,15 @@ export default async function Contact() {
 
             <div className="flex items-center gap-4">
               <MapPin className="text-amber-500" />
-              <span>{contact?.location || "Saudi Arabia"}</span>
+              <span>
+                {location ||
+                  (isEnglish ? "Saudi Arabia" : "المملكة العربية السعودية")}
+              </span>
             </div>
           </div>
         </div>
 
-        <ContactForm />
+        <ContactForm lang={lang} />
       </div>
     </section>
   );

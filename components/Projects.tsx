@@ -3,16 +3,14 @@ import { projectsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
 type Project = {
-  title?: string;
+  titleAr?: string;
   titleEn?: string;
-  description?: string;
+  descriptionAr?: string;
   descriptionEn?: string;
   image?: unknown;
 };
 
-type Lang = "ar" | "en";
-
-export default async function Projects({ lang = "ar" }: { lang?: Lang }) {
+export default async function Projects({ lang = "ar" }: { lang?: "ar" | "en" }) {
   const projects = await client.fetch<Project[]>(
     projectsQuery,
     {},
@@ -22,11 +20,7 @@ export default async function Projects({ lang = "ar" }: { lang?: Lang }) {
   const isEnglish = lang === "en";
 
   return (
-    <section
-      id="projects"
-      dir={isEnglish ? "ltr" : "rtl"}
-      className="bg-[#f8fafc] px-6 py-24 md:px-12 lg:px-20"
-    >
+    <section id="projects" dir={isEnglish ? "ltr" : "rtl"} className="bg-[#f8fafc] px-6 py-24 md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-14 text-center">
           <p className="mb-4 text-sm font-black tracking-[4px] text-amber-500">
@@ -39,40 +33,20 @@ export default async function Projects({ lang = "ar" }: { lang?: Lang }) {
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
-          {projects?.map((project, index) => {
-            const imageUrl = project.image
-              ? urlFor(project.image).url()
-              : "/images/Hero.jpg";
-
-            const title = isEnglish
-              ? project.titleEn || project.title
-              : project.title;
-
-            const description = isEnglish
-              ? project.descriptionEn || project.description
-              : project.description;
+          {projects.map((project, index) => {
+            const imageUrl = project.image ? urlFor(project.image).url() : "/images/Hero.jpg";
+            const title = isEnglish ? project.titleEn : project.titleAr;
+            const description = isEnglish ? project.descriptionEn : project.descriptionAr;
 
             return (
-              <div
-                key={index}
-                className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
-              >
+              <div key={index} className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
                 <div className="h-72 overflow-hidden">
-                  <img
-                    src={imageUrl}
-                    alt={title || "AFAQ ENERGY Project"}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                  />
+                  <img src={imageUrl} alt={title || "AFAQ ENERGY Project"} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
                 </div>
 
                 <div className={`p-7 ${isEnglish ? "text-left" : "text-right"}`}>
-                  <h3 className="text-2xl font-black text-[#1F4E8C]">
-                    {title}
-                  </h3>
-
-                  <p className="mt-4 leading-8 text-gray-600">
-                    {description}
-                  </p>
+                  <h3 className="text-2xl font-black text-[#1F4E8C]">{title}</h3>
+                  <p className="mt-4 leading-8 text-gray-600">{description}</p>
 
                   <button className="mt-6 rounded-full bg-amber-500 px-6 py-3 font-bold text-white transition hover:bg-amber-600">
                     {isEnglish ? "View Details" : "عرض التفاصيل"}
