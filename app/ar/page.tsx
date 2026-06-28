@@ -8,18 +8,19 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-export default function EnglishPage() {
+export default function Home() {
   return (
-    <main dir="ltr">
-        <SplashScreen />
-      <Navbar lang="en" />
-      <Hero lang="en" />
-      <About lang="en" />
-      <Services lang="en" />
-      <Projects lang="en" />
-      <Contact lang="en" />
-      <Footer lang="en" />
+    <main>
+      <SplashScreen />
+      <Navbar />
+      <Hero />
+      <About />
+      <Services />
+      <Projects />
+      <Contact />
+      <Footer />
+
+      <WhatsAppButton />
     </main>
   );
-
 }

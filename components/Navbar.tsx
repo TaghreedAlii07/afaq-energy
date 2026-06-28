@@ -8,6 +8,9 @@ export default function Navbar({ lang = "ar" }: { lang?: Lang }) {
   const [open, setOpen] = useState(false);
   const isEnglish = lang === "en";
 
+  const homeUrl = isEnglish ? "/#home" : "/ar#home";
+  const switchLangUrl = isEnglish ? "/ar#home" : "/#home";
+
   const links = isEnglish
     ? [
         { href: "#home", label: "Home" },
@@ -31,7 +34,7 @@ export default function Navbar({ lang = "ar" }: { lang?: Lang }) {
           dir={isEnglish ? "ltr" : "rtl"}
           className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-6 px-6 lg:px-12"
         >
-          <a href={isEnglish ? "/en#home" : "/#home"} className="shrink-0">
+          <a href={homeUrl} className="shrink-0">
             <img
               src="/images/logo.png"
               alt="AFAQ ENERGY"
@@ -41,7 +44,11 @@ export default function Navbar({ lang = "ar" }: { lang?: Lang }) {
 
           <div className="hidden flex-1 items-center justify-center gap-8 text-lg font-bold text-[#1F4E8C] lg:flex">
             {links.map((link) => (
-              <a key={link.href} href={link.href} className="whitespace-nowrap hover:text-amber-500">
+              <a
+                key={link.href}
+                href={link.href}
+                className="whitespace-nowrap hover:text-amber-500"
+              >
                 {link.label}
               </a>
             ))}
@@ -49,7 +56,7 @@ export default function Navbar({ lang = "ar" }: { lang?: Lang }) {
 
           <div className="hidden shrink-0 items-center gap-4 lg:flex">
             <a
-              href={isEnglish ? "/#home" : "/en#home"}
+              href={switchLangUrl}
               className="whitespace-nowrap rounded-full border border-[#1F4E8C]/30 px-5 py-3 font-bold text-[#1F4E8C] transition hover:border-amber-500 hover:text-amber-500"
             >
               {isEnglish ? "العربية" : "English"}
@@ -81,13 +88,17 @@ export default function Navbar({ lang = "ar" }: { lang?: Lang }) {
           >
             <div className="flex flex-col gap-5 text-xl font-bold text-[#1F4E8C]">
               {links.map((link) => (
-                <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                >
                   {link.label}
                 </a>
               ))}
 
               <a
-                href={isEnglish ? "/#home" : "/en#home"}
+                href={switchLangUrl}
                 onClick={() => setOpen(false)}
                 className="rounded-full border border-[#1F4E8C]/30 py-3 text-center text-base font-bold"
               >
